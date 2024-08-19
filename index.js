@@ -1,37 +1,18 @@
-function calc(){
-    document.getElementById("soma").onclick = function(){
-        let num1 = document.getElementById("num1").value;
-        let num2 = document.getElementById("num2").value;
-    
-        let result = parseFloat(num1) + parseFloat(num2);
-        
-        document.getElementById("result").value = result;
-    }
+function calc(op){
+    let num1 = parseFloat(document.getElementById("num1").value);
+    let num2 = parseFloat(document.getElementById("num2").value);
 
-    document.getElementById("subtracao").onclick = function(){
-        let num1 = document.getElementById("num1").value;
-        let num2 = document.getElementById("num2").value;
-    
-        let result = parseFloat(num1) - parseFloat(num2);
-        
-        document.getElementById("result").value = result;
-    }
+    let result = 0;
 
-    document.getElementById("multiply").onclick = function(){
-        let num1 = document.getElementById("num1").value;
-        let num2 = document.getElementById("num2").value;
-    
-        let result = parseFloat(num1) * parseFloat(num2);
-        
-        document.getElementById("result").value = result;
+    switch (op){
+        case "+": result = num1 + num2; break;
+        case "-": result = num1 - num2; break;
+        case "*": result = num1 * num2; break;
+        case "/": result = num1 / num2; break;
     }
-
-    document.getElementById("divide").onclick = function(){
-        let num1 = document.getElementById("num1").value;
-        let num2 = document.getElementById("num2").value;
+    document.getElementById("result").value = result;
     
-        let result = parseFloat(num1) / parseFloat(num2);
-        
-        document.getElementById("result").value = result;
-    }
+    
+    
+    document.getElementById("history").innerHTML += "<div>"+ num1 + op + num2 + "=" + result + "</div>";
 }

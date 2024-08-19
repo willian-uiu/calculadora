@@ -9,21 +9,23 @@
 </head>
 <body>
     <div class="container">
+
         <div class="calc">
+            <object data="calc.svg" type="image/svg+xml"></object>
             <h1>Calculadora</h1>
             <input type="number" name="num1" id="num1">
             <input type="number" name="num2" id="num2">
             <div class="botoes">
-                <button onclick="calc()" id="soma">+</button>
-                <button onclick="calc()" id="subtracao">-</button>
-                <button onclick="calc()" id="multiply">*</button>
-                <button onclick="calc()" id="divide">/</button>
+                <button onclick="calc('+')">+</button>
+                <button onclick="calc('-')">-</button>
+                <button onclick="calc('*')">*</button>
+                <button onclick="calc('/')">/</button>
             </div>
             <input readonly name="result" id="result">
         </div>
         
 
-        <div class="history">
+        <div id="history" class="history">
 
         </div>
     </div>
