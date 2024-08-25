@@ -13,6 +13,11 @@ function calc(op){
     document.getElementById("result").value = result;
     
     
-    
-    document.getElementById("history").innerHTML += "<div>"+ num1 + op + num2 + "=" + result + "</div>";
+    let operacao =  "<p>"+ num1 + op + num2 + "=" + result + "</p>";
+    let history = document.getElementById("history");
+    history.innerHTML = operacao + history.innerHTML;
+
+    if(history.children.length > 10){
+        history.removeChild(history.childNodes[10]);
+    }
 }
